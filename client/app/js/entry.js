@@ -15,7 +15,9 @@ var GetCelebs = React.createClass({
         if (id === celeb._id) celeb.editing = true;
         return celeb;
       });
-      this.setState({ celebs: holder });
+      this.setState({
+        celebs: holder
+      });
     };
   },
 
@@ -25,11 +27,13 @@ var GetCelebs = React.createClass({
         if (celeb._id === id) return false;
         return true;
       });
-      this.setState({ celebs: holder });
+      this.setState({
+        celebs: holder
+      });
 
       $.ajax({
         url: 'http://localhost:3000/api/celebs/' + id,
-        type:'DELETE'
+        type: 'DELETE'
       }).then(function(data) {
         console.log(data);
       });
@@ -63,7 +67,9 @@ var GetCelebs = React.createClass({
       }
       return celeb;
     });
-    this.setState({ celebs: holder });
+    this.setState({
+      celebs: holder
+    });
   },
 
   displayCelebs: function() {
@@ -74,31 +80,61 @@ var GetCelebs = React.createClass({
       data.forEach(function(celeb) {
         celeb.editing = false;
       });
-      this.setState({ celebs: data });
+      this.setState({
+        celebs: data
+      });
     });
   },
 
   render: function() {
     return (
-      <ul>
-        {this.state.celebs.map((celeb) => {
-          return (
-            <li key={celeb._id}>
-              {celeb.name}, {celeb.occupation}, {celeb.species}
-                <button onClick={this.editCeleb(celeb._id)}>EDIT</button>
-                <button onClick={this.removeCeleb(celeb._id)}>DELETE</button>
+       <ul> {
+      this.state.celebs.map((celeb) => {
+        return ( < li key = {
+            celeb._id
+          } > {
+            celeb.name
+          }, {
+            celeb.occupation
+          }, {
+            celeb.species
+          } < button onClick = {
+            this.editCeleb(celeb._id)
+          } > EDIT < /button> < button onClick = {
+            this.removeCeleb(celeb._id)
+          } > DELETE < /button>
 
-                <form id={celeb._id} className={celeb.editing ? null : 'hidden'} onSubmit={this.saveCeleb}>
-                  <input type="text" name="celeb-name" placeholder="Celeb Name" defaultValue={celeb.name} />
-                  <input type="text" name="celeb-occupation" placeholder="Occupation" defaultValue={celeb.occupation} />
-                  <input type="text" name="celeb-species" placeholder="Species" defaultValue={celeb.species} />
-                  <button type="submit">SAVE INTERVIEW</button>
-                </form>
-            </li>
-          );
-        })}
-      </ul>
-    );
+          < form id = {
+            celeb._id
+          }
+          className = {
+            celeb.editing ? null : 'hidden'
+          }
+          onSubmit = {
+            this.saveCeleb
+          } >
+          < input type = "text"
+          name = "celeb-name"
+          placeholder = "Celeb Name"
+          defaultValue = {
+            celeb.name
+          }
+          /> < input type = "text"
+          name = "celeb-occupation"
+          placeholder = "Occupation"
+          defaultValue = {
+            celeb.occupation
+          }
+          /> < input type = "text"
+          name = "celeb-species"
+          placeholder = "Species"
+          defaultValue = {
+            celeb.species
+          }
+          /> < button type = "submit" > SAVE INTERVIEW < /button> < /form> < /li>
+        );
+      })
+    } < /ul>);
   }
 });
 
@@ -119,16 +155,22 @@ var NewCeleb = React.createClass({
   },
 
   render: function() {
-    return (
-      <form onSubmit={this.createCeleb}>
-        <input type="text" name="celeb-name" placeholder="Celeb Name" />
-        <input type="text" name="celeb-occupation" placeholder="Occupatiom" />
-        <input type="text" name="celeb-species" placeholder="Species" />
-        <button type="submit">CREATE INTERVIEW</button>
-      </form>
+    return ( < form onSubmit = {
+        this.createCeleb
+      } >
+      < input type = "text"
+      name = "celeb-name"
+      placeholder = "Celeb Name" / >
+      < input type = "text"
+      name = "celeb-occupation"
+      placeholder = "Occupation" / >
+      < input type = "text"
+      name = "celeb-species"
+      placeholder = "Species" / >
+      < button type = "submit" > CREATE INTERVIEW < /button> < /form>
     );
   }
 });
 
-ReactDOM.render(<NewCeleb /> , document.getElementById('newceleb'));
-ReactDOM.render(<GetCelebs /> , document.getElementById('celeb-holder'));
+ReactDOM.render( < NewCeleb / > , document.getElementById('newceleb'));
+ReactDOM.render( < GetCelebs / > , document.getElementById('celeb-holder'));

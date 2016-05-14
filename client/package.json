@@ -23,6 +23,10 @@
     "mongoose": "^4.4.17"
   },
   "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-react": "^6.5.0",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
     "react": "^15.0.2",
