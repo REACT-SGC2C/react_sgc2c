@@ -7,7 +7,9 @@ var port = process.env.PORT || 3000;
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/db_celeb');
 app.listen(port, () => console.log('server up on port:' + port));
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const celebRouter = require(__dirname + '/routes/celebRoutes');
 
