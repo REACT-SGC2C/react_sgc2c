@@ -1,0 +1,32 @@
+{
+  "name": "react_sgc2c",
+  "version": "1.0.0",
+  "description": "React Assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REACT-SGC2C/react_sgc2c.git"
+  },
+  "author": "Ali Forman | Tim Forman | Shelly Yusuf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/REACT-SGC2C/react_sgc2c/issues"
+  },
+  "homepage": "https://github.com/REACT-SGC2C/react_sgc2c#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.17"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "webpack-stream": "^3.2.0"
+  }
+}
