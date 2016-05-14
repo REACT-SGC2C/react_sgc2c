@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 var celebSchema = new Schema({
   name: {
-    type: String,
-    required: true
+    type: String
+    // required: true
   },
   occupation: {
     type: String
