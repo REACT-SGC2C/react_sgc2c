@@ -88,13 +88,15 @@ var GetCelebs = React.createClass({
 
   render: function() {
     return (
-       <ul>
+       <ol>
         { this.state.celebs.map((celeb) => {
           return (
           <li key = { celeb._id } >
-            { celeb.name }, { celeb.occupation }, { celeb.species }
-              <button onClick = { this.editCeleb(celeb._id) } > EDIT < /button>
-              <button onClick = { this.removeCeleb(celeb._id) } > DELETE < /button>
+            <p>Name: { celeb.name },</p>
+            <p>Occupation: { celeb.occupation }</p>
+            <p>Species: { celeb.species }</p>
+              <p><button onClick = { this.editCeleb(celeb._id) } > EDIT < /button>
+              <button onClick = { this.removeCeleb(celeb._id) } > DELETE < /button></p>
 
               <form id = { celeb._id } className = { celeb.editing ? null : 'hidden' } onSubmit = { this.saveCeleb }>
                 <input type = "text" name = "celeb-name" placeholder = "Celeb Name" defaultValue = { celeb.name } />
@@ -105,7 +107,7 @@ var GetCelebs = React.createClass({
             </li>
           );
         })}
-      </ul>
+      </ol>
     );
   }
 });
@@ -138,5 +140,5 @@ var NewCeleb = React.createClass({
   }
 });
 
-ReactDOM.render( < NewCeleb /> , document.getElementById('newceleb'));
 ReactDOM.render( < GetCelebs /> , document.getElementById('celeb-holder'));
+ReactDOM.render( < NewCeleb /> , document.getElementById('newceleb'));

@@ -15,11 +15,14 @@ body {
   font-family: "Rosarivo", Serif;
   font-size: 1.3em;
 }
-main {
-  border: 4px solid black;
+h1 {
+  text-align: center;
 }
 section {
   margin: 2% 5%;
+}
+aside {
+  margin: 10%;
 }
 button {
   font-size: .8em;
@@ -36,4 +39,10 @@ li {
 }
 input {
   font-size: .8em;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
 }
