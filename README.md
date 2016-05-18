@@ -4,9 +4,9 @@ React Assignment Code Fellows 401
 To use this app:
 
 1. Run mongod in your terminal.
-2. In another terminal window, navigate to the client folder, then run gulp.
-3. Run node server.js from the client folder.
-4. In another terminal window, navigate to the server folder, then run node server.js.
+2. In another terminal window, navigate to the client folder, run 'npm install', then run 'gulp'.
+3. Run 'node server.js' from the client folder.
+4. In another terminal window, navigate to the server folder, run 'npm install', then run 'node server.js'.
 5. Open your browser, enter 'http://localhost:5000' in the address bar.
 
 GET/POST/PUT/DELETE
